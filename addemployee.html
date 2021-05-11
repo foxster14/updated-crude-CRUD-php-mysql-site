@@ -6,30 +6,36 @@
 </head>
 
 <body>
-<h2>Add an Employee Record</h2>
-<p>This will add a record to the employee table in the MySQL Database</p>
-<p>Employee "Weedman" is pre-populated as an example</p>
-<!-- here is the start of the form -->
-<form action="addemployee.php">
-  Last name:<br>
-  <input type="text" name="lastname" value="Weedman">
-  <br><br>
-  First Name:<br>
-  <input type="text" name="firstname" value="Josphine">
-  <br><br>
-  Birth date:<br>
-  <input type="text" name="birth_date" value="1969-05-30">
-  <br><br>
-  Hire date:<br>
-  <input type="text" name="hire_date" value="1999-05-30">
-  <br><br>
-  Gender:<br>
-  <input type="text" name="gender" value="F">
-  <br><br>
-  Employee number:<br>
-  <input type="text" name="emp_no" value="500001">
-  <br><br>
-  <input type="submit" value="Submit">
-</form>
+  <h2>Add an Employee Record</h2>
+  <p>This form will add a new record to the employee database</p>
+  <p>Employee "Weedman" is pre-populated as an example</p>
+  <br>
+  <p>Please enter the information of the new employee you wish to add:</p>
+  <!-- here is the start of the form -->
+  <form action="addemployee.php">
+    Last name:<br>
+    <input type="text" name="lastname" value="Weedman">
+    <br><br>
+    First Name:<br>
+    <input type="text" name="firstname" value="Josphine">
+    <br><br>
+    Birth date:<br>
+    <input type="text" name="birth_date" value="1969-05-30">
+    <br><br>
+    Hire date:<br>
+    <input type="text" name="hire_date" value="1999-05-30">
+    <br><br>
+    Gender:<br>
+    <input type="text" name="gender" value="F">
+    <br><br>
+    Employee number:<br>
+    <input type="text" name="emp_no" value="500001">
+    <br><br>
+    <input type="submit" value="Submit">
+  </form>
+  <hr> <!-- This is the hr tag, or "horizonatal reference" -->
+  <br>
+  <p>Click the link below to return to the homepage</p>
+  <a href="index.html" title="Home" target="_parent">Home</a>
 </body>
 </html>

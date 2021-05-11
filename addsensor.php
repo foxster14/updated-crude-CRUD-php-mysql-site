@@ -1,12 +1,12 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Add Employee</title>
+    <meta charset="utf-8">
+    <title>Add Sensor Record</title>
 </head>
 
 <body>
-	<h2>Delete Employee Record</h2>
+	<h2>Add a New Sensor Record to the Sensors Inventory</h2>
 	<br><br>
 	<?php
 		echo "<h3>PHP Code Generates This:</h3>";
@@ -25,8 +25,11 @@
 		echo "MySQL Connection Succeeded<br><br>";
 		
 		//pull the attribute that was passed with the html form GET request and put into a local variable.
+		$sensor_no = $_GET["sensor_no"];
+		$sensor_type = $_GET["sensor_type"];
+		$sensor_status = $_GET["sensor_status"];
 		$emp_no = $_GET["emp_no"];
-		//echo "Adding record for: " . $firstname . " " . $lastname;
+		echo "Adding record for Sensor Number: " . $sensor_no . " and Employee Number: " . $emp_no;
 	
 		echo "<br><br>";
 		
@@ -34,12 +37,23 @@
 		//based on using the GET attribute
 		//this statement needs to be variablized to put in the data passed from the form
 		//right now it is hardcoded.
-		$sql = "DELETE from employees WHERE emp_no ='".$emp_no."'";
+		/*$sql = "BEGIN; 
+				INSERT INTO sensors (sensor_no, sensor_type, sensor_status) 
+				VALUES ('".$sensor_no."', '".$sensor_type."', '".$sensor_status."');
+				INSERT INTO emp_sensor (emp_no, sensor_no) 
+				VALUES ('".$emp_no."', '".$sensor_no."'); 
+				COMMIT;";*/
+		
+		$sql = "INSERT INTO sensors (sensor_no, sensor_type, sensor_status) 
+				VALUES ('".$sensor_no."', '".$sensor_type."', '".$sensor_status."')";
+
+		$sql = "INSERT INTO emp_sensor (emp_no, sensor_no) 
+				VALUES ('".$emp_no."', '".$sensor_no."')";
 	
 	
 		if ($conn->query($sql) === TRUE){
 			
-			echo "Employee Deleted Successfully";
+			echo "New Sensor Record Created Successfully";
 			
 		} else {
 		
@@ -51,5 +65,10 @@
 		$conn->close();
 		
 	?>
+    <br>
+    <hr>
+    <br>
+    <p>Click the link below to return to the homepage</p>
+    <a href="index.html" title="Home" target="_parent">Home</a>
 </body>
 </html>

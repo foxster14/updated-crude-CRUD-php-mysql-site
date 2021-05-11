@@ -2,13 +2,10 @@
 	// required headers
 	header("Access-Control-Allow-Origin: *");
 	header("Content-Type: application/json; charset=UTF-8");
-	//some variables
-	$servername = "localhost";  //mysql is on the same host as apache
-	//username for database
-    $username = "foxsarh";
-	//pasword for the user
-	$password = "123";
-	$dbname = "employees";  	//which db you're going to use
+	
+	//import location of mysql database, database credentials
+	//and which database to use, i.e. Employees
+	include 'credentials.php';
 	
 	//this is the php object oriented style of creating a mysql connection
 	$conn = new mysqli($servername, $username, $password, $dbname);  

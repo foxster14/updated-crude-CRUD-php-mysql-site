@@ -11,11 +11,9 @@
 	<?php
 		echo "<h3>PHP Code Generates This:</h3>";
 		
-		//some variables
-		$servername = "localhost";  //mysql is on the same host as apache (not realistic but whatevs)
-		$username = "foxsarh";    //username for database
-		$password = "123";		//password for the user
-		$dbname = "employees";  	//which db you're going to use
+		//import location of mysql database, database credentials
+		//and which database to use, i.e. Employees
+		include 'credentials.php';
 	
 		//this is the php object oriented style of creating a mysql connection
 		$conn = new mysqli($servername, $username, $password, $dbname);  

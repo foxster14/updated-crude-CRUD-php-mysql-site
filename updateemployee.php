@@ -11,13 +11,9 @@
 	<?php
 		echo "<h3>PHP Code Generates This:</h3>";
 		
-		//some variables
-		$servername = "localhost";  //mysql is on the same host as apache (not realistic) this would more likely be an IP address
-		//$username = "<put your db username here>";    //username for database
-	    $username = "foxsarh";
-		//$password = "<put your db password here>";		//password for the user
-	    $password = "123";
-		$dbname = "employees";  	//which db you're going to use
+		//import location of mysql database, database credentials
+		//and which database to use, i.e. Employees
+		include 'credentials.php';
 	
 		//this is the php object oriented style of creating a mysql connection
 		$conn = new mysqli($servername, $username, $password, $dbname);  
@@ -71,14 +67,22 @@
 
         <!--then input box for new value and employee number--> 
             <br><br>
+			<p>Please enter what the updated value for the field you selected:</p> 
             New Value:<br>
             <input type="text" name="new_value" value="">
             <br><br>
-            Employee Number:<br>
+			<p>Please enter the employee number that matches the number selected on previous page</p>
+			<p>It is important that the employee number is the same to ensure the correct record is updated.</p>
+			Employee Number:<br>
             <input type="text" name="emp_no" value="500000">
             <br><br>
             <input type="submit" value="Submit">
         </form>
+		<br>
+		<hr> <!-- This is the hr tag, or "horizonatal reference" -->
+		<br>
+		<p>Click the link below to return to the homepage</p>
+		<a href="index.html" title="Home" target="_parent">Home</a>
 
 		
 		<!--//pull the attribute that was passed with the html form GET request and put into a local variable.

@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Add New Sensor Record</title>
+</head>
+
+<body>
+    <h2>Add New Sensor Record</h2>
+    <p>This form will add a new record to the sensors inventory and allow you to assign
+    <br>which employee is responsible for managing this sensor by using their employee number.</p>
+    <hr>
+    <p><b>Detailed Instructions:</b></p>
+    <p>The sensor number must be four numbers long and begin with "100"</p>
+    <p>A sensor number of "1004" is pre-populated as an example</p>
+    <p>There are three different sensor types, "temperature", "humidity" and "pressure"</p>
+    <p>The sensor status should only hold one of 3 values: </p>
+    <ul>
+        <li>0 = fault</li>
+        <li>1 = active</li>
+        <li>2 = offline</li>
+    </ul>
+    <hr>
+    <p><b>Please enter the information of the new sensor reading you wish to add</b> (note the fields are pre-populated with example data):</p>
+    <!-- here is the start of the form -->
+    <form action="addsensor.php">
+            Sensor Number:<br>
+            <input type="text" name="sensor_no" value="1004">
+            <br><br>
+            Sensor Type (temperature, humidity, or pressure):<br>
+            <input type="text" name="sensor_type" value="temperature">
+            <br><br>
+            Sensor Status (0, 1, or 2):<br>
+            <input type="text" name="sensor_status" value="1">
+            <br><br>
+            Employee Number of Employee Responsible for this Sensor:<br>
+            <input type="text" name="emp_no" value="500000">
+            <br><br>
+            <input type="submit" value="Submit">
+    </form>
+    <br><br>
+    <hr>
+    <br>
+    <p>Click the link below to return to the homepage</p>
+    <a href="index.html" title="Home" target="_parent">Home</a>
+
+</body>
+</html>
